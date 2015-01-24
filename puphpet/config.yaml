@@ -153,6 +153,7 @@ php:
             - cli
             - intl
             - mcrypt
+            - curl
         pear: {  }
         pecl: {  }
     ini:
