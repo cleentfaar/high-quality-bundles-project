@@ -8,10 +8,10 @@ will (see `puphet/config.yml`).
 
 # Getting started
 
-1) Create a new project:
+1) Clone this fork:
 
 ```sh
-composer create-project cleentfaar/high-quality-bundles-project
+git clone https://github.com/cleentfaar/high-quality-bundles-project.git
 ```
 
 2) Launch the box:
@@ -48,3 +48,11 @@ synced_folder:
       # ...
       sync_type: nfs # change this to 'default'!
 ```
+
+
+## Remaining issues
+
+Although Puphpet promotes the use of scripts in the `startup-once` (`execute-once`, etc.) directories,
+they never seemed to be executed when I tried to use them for configuring the project. If someone can get a working
+set-up using scripts in these directories I'd be happy to merge it. The current workaround is adding the commands to the
+`dot/.bash_aliases` file, which isn't really acceptable.
