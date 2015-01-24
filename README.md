@@ -1,27 +1,35 @@
+This fork adds a vagrant box configuration so the project can be fully configured (and isolated) with just a few commands.
+- An nginx webserver will be running the project and make it accessible through the URL: http://high-quality-bundles/dev.
+- A mysql database is automatically created and configured, and the `parameters.yml.dist` file was adjusted to inherit
+these values making further (manual) configuration unnecessary.
+- Powered by [Puphpet's](http://www.puphpet.com) configuration so additional packages and services could be installed at
+will (see `puphet/config.yml`).
+
+
 # Getting started
 
 1. Create a new project:
 
+```sh
+composer create-project cleentfaar/high-quality-bundles-project
 ```
-composer create-project matthiasnoback/high-quality-bundles-project [project-directory] dev-master
+
+2. Launch the box:
+
+```sh
+cd high-quality-bundles-project
+vagrant up && vagrant ssh
 ```
 
-2. When asked, supply the requested information concerning the MySQL database (make sure you run a MySQL server).
-
-3. Do whatever is needed to get your file permissions right (see also [Setting up Permissions](http://symfony.com/doc/current/book/installation.html)).
-
-4. Then see if everything works:
-
-```
+4. You should now be logged into the virtual machine, sitting inside the project directory. See if everything works:
+```sh
 app/console
 ```
 
-5 Configure the web server to serve the `/web` directory of this project.
+5. If you get the familiar list of commands, open a separate terminal window and adjust your (real) machine's hosts-file:
+```
+sudo echo "192.168.56.101    high-quality-bundles.dev" >> /etc/hosts
+```
 
-> If you run PHP 5.4 or higher, you don't need to configure the web server for this project, because you can use the Symfony command:
->
-> ```
-> app/console server:run
-> ```
->
-> Check if everything works. When you request `http://127.0.0.1:8000/` in the browser you should see a nicely styled 404 error page from Symfony.
+6. The project should now be accessible by visiting `http://high-quality-bundles.dev`.
+   If it isn't, make sure to clear your browser cache or restart it.
