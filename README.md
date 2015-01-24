@@ -31,7 +31,7 @@ app/console
 sudo echo "192.168.56.101    high-quality-bundles.dev" >> /etc/hosts
 ```
 
-5) The project should now be accessible by visiting `http://high-quality-bundles.dev`.
+5) The project should now be accessible by visiting http://high-quality-bundles.dev.
    If it isn't, make sure to clear your browser cache or restart it.
 
 
