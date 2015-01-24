@@ -36,7 +36,7 @@ vagrantfile-local:
                 owner: www-data
                 group: www-data
                 source: ./
-                target: /var/www
+                target: /var/www/high-quality-bundles
                 sync_type: nfs
                 rsync:
                     args:
@@ -131,7 +131,7 @@ nginx:
             server_name: high-quality-bundles.dev
             server_aliases:
                 - www.high-quality-bundles.dev
-            www_root: /var/www/web
+            www_root: /var/www/high-quality-bundles/web
             listen_port: '80'
             location: \.php$
             index_files:

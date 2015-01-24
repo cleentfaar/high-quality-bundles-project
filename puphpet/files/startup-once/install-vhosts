@@ -1,2 +1,0 @@
-sudo cp ./../templates/vhosts/high-quality-bundles.dev.conf.template /etc/nginx/sites-enabled/high-quality-bundles.dev.conf
-sudo service nginx restart

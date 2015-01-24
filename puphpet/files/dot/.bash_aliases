@@ -50,3 +50,8 @@ alias rm='rm -i'
 alias mv='mv -iv'
 alias grep='grep --color=auto -in'
 alias ..='cd ..'
+
+# Project set-up
+sudo cp /var/www/high-quality-bundles/puphpet/files/templates/vhosts/high-quality-bundles.dev.conf.template /etc/nginx/sites-enabled/high-quality-bundles.dev.conf
+sudo service nginx restart
+cd /var/www/high-quality-bundles
